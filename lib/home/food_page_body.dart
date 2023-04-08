@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodorder/widgets/big_text.dart';
-import 'package:foodorder/widgets/small_text.dart';
-import 'package:foodorder/widgets/icon_and_text_widget.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
