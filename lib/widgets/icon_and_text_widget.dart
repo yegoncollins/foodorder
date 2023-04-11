@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodorder/widgets/small_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IconAndTextWidget extends StatelessWidget {
   final IconData icon;

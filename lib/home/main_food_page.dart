@@ -1,6 +1,8 @@
 
-import 'package:flutter/material.dart';
+// ignore_for_file: unused_import
 
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:foodorder/home/food_page_body.dart';
 import 'package:foodorder/widgets/big_text.dart';
 import 'package:foodorder/widgets/small_text.dart';
@@ -21,7 +23,6 @@ class _MainFoodPageState extends State<MainFoodPage> {
       body: Column(
         children: [
           Container(
-      child: Container(
         margin: EdgeInsets.only(top: 45, bottom: 15),
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Row(
@@ -52,9 +53,12 @@ class _MainFoodPageState extends State<MainFoodPage> {
           ],
         ),
       ),
-    ),
+    
+    
+    
+    const FoodPageBody(),
 
-     const FoodPageBody(),
+     
 
         ],
       ),

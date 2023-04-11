@@ -23,7 +23,7 @@ class SmallText extends StatelessWidget {
         color: color,
         fontSize: size,
         height: height,
-        fontFamily: 'Roboto',
+        fontFamily: 'Raleway',
       ),
     );
   }

@@ -1,4 +1,9 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/big_text.dart';
+import '../widgets/icon_and_text_widget.dart';
+import '../widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -10,8 +15,8 @@ class FoodPageBody extends StatefulWidget {
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = 220;
+  final double _scaleFactor = 0.8;
+  final double _height = 220;
 
   @override
   void initState() {
@@ -30,7 +35,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Column(
+      children: [
+        Container(
       height: 320,
       padding: EdgeInsets.only(left: 20, right: 20),
       child: PageView.builder(
@@ -39,6 +46,18 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           itemBuilder: (context, section) {
             return _buildPageItem(section);
           }),
+    ),
+    new DotsIndicator(
+  dotsCount: 5,
+  position: _currPageValue,
+  decorator: DotsDecorator(
+    size: const Size.square(9.0),
+    activeSize: const Size(18.0, 9.0),
+    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+  ),
+)
+    
+      ],
     );
   }
 
@@ -84,14 +103,25 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               height: 120,
               margin: EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.white),
-                  boxShadow: [
-                    boxShadow(
-                    color: Color(0xFFe8e8e8),
-                    blurRadius: 5.0,
-                    offset: Offset(0, 5) 
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                     color: Color(0xFFe8e8e8),
+                     blurRadius: 5.0,
+                     offset: Offset(0, 5)
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-5, 0)
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(5, 0)
                     )
-                  ],
+                  ]
+                  ),
+                  
               child: Container(
                 padding: EdgeInsets.only(top: 10, left: 15, right: 15),
                 child: Column(
