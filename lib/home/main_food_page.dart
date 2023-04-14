@@ -1,4 +1,3 @@
-
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
@@ -19,47 +18,48 @@ class _MainFoodPageState extends State<MainFoodPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("currrent height is" + MediaQuery.of(context).size.height.toString());
     return Scaffold(
       body: Column(
         children: [
           Container(
-        margin: EdgeInsets.only(top: 45, bottom: 15),
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
+            margin: EdgeInsets.only(top: 45, bottom: 15),
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                  BigText(text: "Nakuru",color: Color.fromARGB(255, 232, 111, 134),),
-                  Row(
-                    children: [
-                      SmallText(text: "Kiamunyi",color: Color.fromARGB(255, 48, 47, 47), ),
-                      const Icon(Icons.arrow_drop_down_rounded)
-                    ],
-                  )
+                Column(
+                  children: [
+                    BigText(
+                      text: "Nakuru",
+                      color: Color.fromARGB(255, 232, 111, 134),
+                    ),
+                    Row(
+                      children: [
+                        SmallText(
+                          text: "Kiamunyi",
+                          color: Color.fromARGB(255, 48, 47, 47),
+                        ),
+                        const Icon(Icons.arrow_drop_down_rounded)
+                      ],
+                    )
+                  ],
+                ),
+                Center(
+                  child: Container(
+                    width: 45,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color.fromARGB(255, 232, 111, 134),
+                    ),
+                    child: const Icon(Icons.search, color: Colors.white),
+                  ),
+                )
               ],
             ),
-            Center(
-              child: Container(
-                width: 45,
-                height: 45,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color.fromARGB(255, 232, 111, 134),
-                ),
-                child: const Icon(Icons.search, color:Colors.white),
-              ),
-            )
-          ],
-        ),
-      ),
-    
-    
-    
-    const FoodPageBody(),
-
-     
-
+          ),
+          const FoodPageBody(),
         ],
       ),
     );
